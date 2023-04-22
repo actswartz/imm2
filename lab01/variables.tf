@@ -1,6 +1,6 @@
 # Location of the Intersight API Secretkey file
 variable "secretkey" {
-  default = "/root/secretkey.txt" 
+  default = "/home/student/secretkey.txt" 
 }
 # Intersight API-Key-ID
 variable "apikey" {
