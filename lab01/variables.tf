@@ -12,6 +12,6 @@ variable "endpoint" {
 }
 # Replace X with your POD number
 variable "organization_name" {
-  default = "PODX"
+  default = "default"
 }
 
