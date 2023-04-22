@@ -5,10 +5,7 @@ data "intersight_organization_organization" "organization_moid" {
 output "organization_moid" {
   value = data.intersight_organization_organization.organization_moid.results[0].moid
 }
-variable "target_organization" {
-  description = "Deployment organization for policies - Terraform deployed"
-  type        = string
-}
+
 
 
 # Local vars for easy reference
