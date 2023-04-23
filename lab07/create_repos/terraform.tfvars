@@ -1,26 +1,33 @@
-# Intersight Access API Key
-# Common
-org_name = "default"
-server_serial = "FCxxxxxx"
-os_config_file = "ESXi7.0ConfigFile"
+Tags = [{
+    Key   = "Location"
+    Value = "SJ"
+  },
+  {
+    Key   = "ENV"
+    Value = "PROD"
+  }]
 
-os_repo_name = "os_repo_esxi"
-scu_repo_name = "scu_6.1.3c"
+object_type = "https" # Options: https, cifs, nfs
+enable_https = true
+enable_cifs = false
+enable_nfs = false
 
-# os_install
-# Configuration Source : Cisco
-# Configuration File :
-# ESXi  : ESXi6.7ConfigFile, ESXi6.5ConfigFile,
-# Redhat: RHEL8ConfigFile, RHEL7ConfigFile
-# Ubuntu: No cisco provided config
-# Windows: Windows2019ConfigFile, Windows2016ConfigFile
-os_hostname       = "tf-custom-esxi1"
-os_ip_config_type = "static"
+# create_os_repo
+repo_name               = "os-repo"
+repo_nr_version         = "ESXi 7.0"
+repo_vendor             = "VMware"
+repo_description        = "ESXi 7.0 Cisco Custom ISO"
+repo_source_os_iso_path = "https://x.x.x.x/FILESERVER/storage/ISOs/VMware-ESXi-7.0.0-16324942-Custom-Cisco-4.1.2a.iso"
 
-## OS IP Info
-os_ipv4_addr         = "x.x.x.156"
-os_ipv4_netmask      = "255.255.248.0"
-os_ipv4_gateway      = "x.x.x.1"
-os_ipv4_dns_ip       = "x.x.x.1"
-os_root_password     = "Password"
-os_answers_nr_source = "Template" # Template for cisco provided source files
+# Common attributes between OS/SCU Resources:
+repo_source_cifs_mount_options = ""
+repo_source_nfs_mount_options  = ""
+repo_source_user               = "root"
+repo_source_password           = "password"
+
+# create_scu_repo
+repo_source_scu_iso_path = "https://x.x.x.x/share/ucs-cxxx-scu-6.1.3c.iso"
+scu_name                 = "scu-repo"
+scu_description          = "SCU 6.1.3c for Demo"
+scu_nr_version           = "6.1.3c"
+scu_supported_models     = ["UCSC-C220-M5SX", "UCSC-C220-M5L", "UCSC-C220-M5SN", "HX220C-M5SX", "HXAF220C-M5SX" ]
